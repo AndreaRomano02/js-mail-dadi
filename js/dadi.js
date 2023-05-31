@@ -1,19 +1,37 @@
 console.log("JS OK");
 
-//# Variabili
-let message = "Ha perso!!!";
+//# Recupero gli elementi dal DOM
+const play = document.getElementById("play-btn");
+const resultPage = document.getElementById("result");
 
-//# Dichiaro le costanti per il random
-const randomUser = parseInt(Math.floor(Math.random() * 6) + 1);
-const randomPC = parseInt(Math.floor(Math.random() * 6) + 1);
+//# Lascio in ascolto il bottone per un click
+play.addEventListener("click", function () {
+  //! Eseguo tutta la logica
 
-console.log("user number: " + randomUser, "pc number: " + randomPC);
+  //# Variabili
+  let message = "Ha perso!!!";
+  let bg = "bg-danger";
+  //# Dichiaro le costanti per il random
+  const randomUser = parseInt(Math.floor(Math.random() * 6) + 1);
+  const randomPC = parseInt(Math.floor(Math.random() * 6) + 1);
 
-//# Controllo se sono uguali
-if (randomPC === randomUser) message = "Pareggio!!!";
+  //# Stampo in pagina i risultati ottenuti
+  resultPage.innerHTML =
+    `<p class="bg-info d-inline-block me-4 p-3 h4">Il risultato del PC è: ${randomPC}</p>` +
+    `<p class="bg-info d-inline-block p-3 h4">Il tuo risultato è: ${randomUser}</p>`;
 
-//# Controllo a chi è uscito il numero maggiore
-if (randomUser > randomPC) message = "Hai vinto!!!";
+  //# Controllo se sono uguali
+  if (randomPC === randomUser) {
+    message = "Pareggio!!!";
+    bg = "bg-warning";
+  }
 
-//# Stampo il messaggio
-console.log(message);
+  //# Controllo a chi è uscito il numero maggiore
+  if (randomUser > randomPC) {
+    message = "Hai vinto!!!";
+    bg = "bg-success";
+  }
+
+  //# Stampo il messaggio
+  resultPage.innerHTML += `<div class="${bg} p-3 h1">${message}</div>`;
+});

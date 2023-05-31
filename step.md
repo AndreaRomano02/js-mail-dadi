@@ -60,4 +60,6 @@
 - Inserisco gli elementi necessari nell'HTML.
 - Recuper su JS gli elementi dal DOM.
 - Lascio in ascolto di un click il bottono 'GIOCA!'.
+  1. Inserisco nel DOM i risultati ottenuti.
   1. Eseguo tutta la logica ideata precedentemente.
+  1. Inserisco nel DOM il vincitore.
