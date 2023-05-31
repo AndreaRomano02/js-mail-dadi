@@ -9,8 +9,9 @@ play.addEventListener("click", function () {
   //! Eseguo tutta la logica
 
   //# Variabili
-  let message = "Ha perso!!!";
-  let bg = "bg-danger";
+  let message = "Pareggio!!!";
+  let bg = "bg-warning";
+
   //# Dichiaro le costanti per il random
   const randomUser = parseInt(Math.floor(Math.random() * 6) + 1);
   const randomPC = parseInt(Math.floor(Math.random() * 6) + 1);
@@ -20,16 +21,16 @@ play.addEventListener("click", function () {
     `<p class="bg-info d-inline-block me-4 p-3 h4">Il risultato del PC è: ${randomPC}</p>` +
     `<p class="bg-info d-inline-block p-3 h4">Il tuo risultato è: ${randomUser}</p>`;
 
-  //# Controllo se sono uguali
-  if (randomPC === randomUser) {
-    message = "Pareggio!!!";
-    bg = "bg-warning";
-  }
-
-  //# Controllo a chi è uscito il numero maggiore
+  //# Controllo se il'utente ha vinto
   if (randomUser > randomPC) {
     message = "Hai vinto!!!";
     bg = "bg-success";
+  }
+
+  //# Controllo se l'utente ha perso
+  else if (randomPC > randomUser) {
+    message = "Hai perso!!!";
+    bg = "bg-danger";
   }
 
   //# Stampo il messaggio
