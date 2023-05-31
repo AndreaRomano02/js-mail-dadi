@@ -24,6 +24,13 @@
 
 ---
 
+- Inserisco gli elementi necessari nell'HTML
+- Recuper su JS gli elementi dal DOM
+- Lascio in ascolto di un click il bottono 'Invia'
+  1. Raccolgo le informazioni (L'email) dall'input e le salvo in una variabile.
+  1. Creo l'elemento da stampare in pagina e ci inserisco il valore dell'input.
+- Inserisco il tutto nell'elemento del DOM
+
 <br>
 
 # TRACCIA Dadi
