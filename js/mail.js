@@ -1,8 +1,12 @@
 console.log("JS OK");
 
 //# PRELIMINARI
-let emailAnswer;
-let emailCorrect;
+//* Recupero gli elementi dal DOM
+const emailElement = document.getElementById("user-email");
+const btnElement = document.getElementById("btn");
+const answerElement = document.getElementById("answer");
+console.log(emailElement, btnElement, answerElement);
+
 //* Creo l'array con le varie email dentro
 const emailList = [
   "andrea@gmail.com",
@@ -13,17 +17,26 @@ const emailList = [
 
 console.table(emailList);
 
-//# Chiedo all'utente di inserire la sua email
-const userEmail = prompt("Inserisci la tua email", "@gmail.com").trim();
-console.log(userEmail);
+//# Metto il bottone in ascolto
+btnElement.addEventListener("click", function () {
+  //* Recupero quello che ha scritto l'utente
+  const userEmail = emailElement.value.trim();
 
-//# Creo il ciclo per scorrere l'Array
-for (let i = 0; i < emailList.length; i++) {
-  console.log(emailList[i]);
-  if (emailList[i] === userEmail.toLowerCase()) emailCorrect = "Benvenuto ";
-  else emailAnswer = "Non puoi accedere alla pagina";
-}
+  //* Imposto un messaggio di default ed aggiungo una classe per cambiare colore
+  let message = "Sbagliato";
+  answerElement.classList.add("bg-danger");
 
-//# Stampo la risposta in console
-if (emailCorrect) console.log(emailCorrect);
-else console.log(emailAnswer);
+  //# Creo il ciclo per scorrere l'Array
+  for (let i = 0; i < emailList.length; i++) {
+    //* Controllo se nell'Array c'è l'email oppure no
+    if (emailList[i] === userEmail.toLowerCase()) {
+      //* Modifico il messaggio e cambio classe per cambiare colore
+      message = "Corretto";
+      answerElement.classList.remove("bg-danger");
+      answerElement.classList.add("bg-success");
+    }
+  }
+
+  //# Stampo la risposta in pagina
+  answerElement.innerText = message;
+});
