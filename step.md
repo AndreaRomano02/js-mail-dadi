@@ -44,6 +44,12 @@
 
 ## STEPS
 
+- Creo due variabili distinte (Una per l'user e una per il PC) e ci inserisco le formule del random.
+- Confronto le seguenti variabili:
+  - **SE** Sono uguali dichiaro un messaggio di pareggio.
+  - **SE INVECE** Una è maggiore dell'altra dichiaro un messaggio di vittoria.
+  - **ALTRIMENTI** Dichiaro un messaggio di sconfitta.
+
 ## BONUS
 
 - Nell'esercizio dadi, mettiamo un tasto "Gioca" ed eseguiamo la logica di gioco al click del bottone.
