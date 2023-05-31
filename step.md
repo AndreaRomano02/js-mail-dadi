@@ -54,3 +54,10 @@
 
 - Nell'esercizio dadi, mettiamo un tasto "Gioca" ed eseguiamo la logica di gioco al click del bottone.
 - Stampiamo i risultati in pagina.
+
+---
+
+- Inserisco gli elementi necessari nell'HTML.
+- Recuper su JS gli elementi dal DOM.
+- Lascio in ascolto di un click il bottono 'GIOCA!'.
+  1. Eseguo tutta la logica ideata precedentemente.
